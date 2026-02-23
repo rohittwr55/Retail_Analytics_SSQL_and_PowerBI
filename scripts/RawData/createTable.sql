@@ -11,19 +11,19 @@ if OBJECT_ID ('raw_data.customer', 'u') is not null
 	drop table raw_data.customer
 create table raw_data.customer
 (
-	CustomerKey	INT,
-	Prefix varchar(50),	
-	FirstName varchar(50),	
-	LastName varchar(50),	
-	BirthDate date,	
-	MaritalStatus varchar(50),	
-	Gender varchar(50),	
+	CustomerKey	varchar(200),
+	Prefix varchar(200),	
+	FirstName varchar(200),	
+	LastName varchar(200),	
+	BirthDate varchar(200),	
+	MaritalStatus varchar(200),	
+	Gender varchar(200),	
 	EmailAddress varchar(200),	
-	AnnualIncome int,	
-	TotalChildren int,
-	EducationLevel varchar(100),
-	Occupation varchar(100),	
-	HomeOwner varchar(50)
+	AnnualIncome varchar(200),	
+	TotalChildren varchar(200),
+	EducationLevel varchar(200),
+	Occupation varchar(200),	
+	HomeOwner varchar(200)
 
 )
 
@@ -40,17 +40,17 @@ if OBJECT_ID ('raw_data.product', 'u') is not null
 	drop table raw_data.product
 create table raw_data.product
 (
-	ProductKey int,	
-	ProductSubcategoryKey int,	
+	ProductKey varchar(100),	
+	ProductSubcategoryKey varchar(100),	
 	ProductSKU varchar(100),
 	ProductName varchar(100),	
 	ModelName varchar(100),	
 	ProductDescription varchar(300),	
-	ProductColor varchar(50), 	
-	ProductSize int,	
+	ProductColor varchar(150), 	
+	ProductSize varchar(100),	
 	ProductStyle varchar(50),	
-	ProductCost int,	
-	ProductPrice int
+	ProductCost varchar(100),	
+	ProductPrice varchar(100)
 )
 
 if OBJECT_ID ('raw_data.subcategory', 'u') is not null
