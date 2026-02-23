@@ -9,3 +9,51 @@ insert into [processed_data].[calender]
 select 
 	table_date
 from [raw_data].[calender]
+
+---------------------------------------------inserting data into customer table
+insert into [processed_data].[customer]
+(
+	CustomerKey,
+	Prefix,	
+	FirstName ,	
+	LastName ,	
+	BirthDate ,	
+	MaritalStatus ,	
+	Gender ,	
+	EmailAddress ,	
+	AnnualIncome ,	
+	TotalChildren ,
+	EducationLevel ,
+	Occupation ,	
+	HomeOwner 
+)
+
+select 
+	CustomerKey,
+	Prefix,	
+	FirstName ,	
+	LastName ,	
+	CONVERT(DATE, BirthDate, 103) AS BirthDate ,	
+	MaritalStatus ,	
+	Gender ,	
+	EmailAddress ,	
+	AnnualIncome ,	
+	TotalChildren ,
+	case 
+		when EducationLevel = 'Partial High School' then 'High School' 
+		when EducationLevel in ( 'Partial College' , 'Graduate Degree' , 'Bachelors' )then 'Bachelors'
+	end as EducationLevel ,
+	Occupation ,	
+	HomeOwner
+from [raw_data].[customer]
+where CustomerKey is not null
+and BirthDate is not null
+and MaritalStatus is not null
+and EmailAddress is not null
+and AnnualIncome is not null
+and TotalChildren is not null
+and EducationLevel is not null
+and Occupation is not null
+and HomeOwner is not null
+
+------------------------------------------------------
