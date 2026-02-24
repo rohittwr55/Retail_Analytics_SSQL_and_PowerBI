@@ -84,3 +84,17 @@ create table processed_data.teritorry
 	Country varchar(100),	
 	Continent varchar(100)
 );
+---------------------------------created processed data table for sales 2020_2022 data
+if OBJECT_ID ('processed_data.sales_2020-2022', 'u') is not null
+	drop table processed_data.sales_2020_2022
+create table processed_data.sales_2020_2022
+(
+	OrderDate date,	
+	StockDate date,	
+	OrderNumber varchar(100),	
+	ProductKey int,	
+	CustomerKey int,	
+	TerritoryKey int,	
+	OrderLineItem int,	
+	OrderQuantity int
+);
