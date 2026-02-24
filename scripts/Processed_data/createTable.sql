@@ -29,4 +29,28 @@ create table processed_data.customer
 	Occupation varchar(200),	
 	HomeOwner varchar(200)
 );
--------------------------------------------
+-------------------------------------------created processed data table for product
+if OBJECT_ID ('processed_data.product', 'u') is not null
+	drop table processed_data.product
+create table processed_data.product
+(
+	ProductKey int,	
+	ProductSubcategoryKey int,	
+	ProductSKU varchar(100),
+	ProductName varchar(100),	
+	ModelName varchar(100),	
+	ProductDescription varchar(300),	
+	ProductColor varchar(150), 	
+	ProductSize varchar(100),	
+	ProductStyle varchar(50),	
+	ProductCost int,	
+	ProductPrice int
+);
+-------------------------------------------created processed data table for product_category
+if OBJECT_ID ('processed_data.product_category', 'u') is not null
+	drop table processed_data.product_category
+create table processed_data.product_category
+(
+	ProductCategoryKey int,
+	CategoryName varchar(50)
+);
