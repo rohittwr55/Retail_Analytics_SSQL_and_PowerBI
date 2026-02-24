@@ -125,3 +125,17 @@ select
 	SubcategoryName,	
 	ProductCategoryKey
 from [raw_data].[subcategory]
+---------------------------------------------------inserting data into teritorry table
+insert into [processed_data].[teritorry]
+(
+	SalesTerritoryKey,	
+	Region,	
+	Country,	
+	Continent
+)
+select 
+	SalesTerritoryKey,	
+	Region,	
+	Country,	
+	Continent
+from [raw_data].[teritorry]
