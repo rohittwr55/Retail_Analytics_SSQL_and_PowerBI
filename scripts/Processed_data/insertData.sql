@@ -96,3 +96,20 @@ select
 	ProductCategoryKey,
 	CategoryName
 from [raw_data].[product_category]
+
+------------------------------------------inserting data into return item table
+insert into [processed_data].[returnitem]
+(
+	ReturnDate,	
+	TerritoryKey,	
+	ProductKey,	
+	ReturnQuantity
+)
+
+select 
+	ReturnDate,	
+	TerritoryKey,	
+	ProductKey,	
+	ReturnQuantity
+from [raw_data].[returnitem]
+---------------------------------------------------------------------------
