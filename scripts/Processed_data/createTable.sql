@@ -65,3 +65,12 @@ create table processed_data.returnitem
 	ProductKey int,	
 	ReturnQuantity int
 );
+--------------------------------------created processed data table for subcategory data
+if OBJECT_ID ('processed_data.subcategory', 'u') is not null
+	drop table processed_data.subcategory
+create table processed_data.subcategory
+(
+	ProductSubcategoryKey int,	
+	SubcategoryName varchar(50),	
+	ProductCategoryKey int
+);
