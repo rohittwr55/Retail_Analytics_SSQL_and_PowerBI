@@ -139,3 +139,49 @@ select
 	Country,	
 	Continent
 from [raw_data].[teritorry]
+-------------------------------------------inserting data into sales 2020_2022 table
+insert into [processed_data].[sales_2020_2022]
+(
+	OrderDate,	
+	StockDate,	
+	OrderNumber,	
+	ProductKey,	
+	CustomerKey,	
+	TerritoryKey,	
+	OrderLineItem,	
+	OrderQuantity
+)
+
+select 
+	OrderDate,	
+	StockDate,	
+	OrderNumber,	
+	ProductKey,	
+	CustomerKey,	
+	TerritoryKey,	
+	OrderLineItem,	
+	OrderQuantity
+
+from [raw_data].[salesData_2020]
+union 
+select 
+	OrderDate,	
+	StockDate,	
+	OrderNumber,	
+	ProductKey,	
+	CustomerKey,	
+	TerritoryKey,	
+	OrderLineItem,	
+	OrderQuantity
+from [raw_data].[salesData_2021]
+union 
+select
+	OrderDate,	
+	StockDate,	
+	OrderNumber,	
+	ProductKey,	
+	CustomerKey,	
+	TerritoryKey,	
+	OrderLineItem,	
+	OrderQuantity
+from [raw_data].[salesData_2022]
