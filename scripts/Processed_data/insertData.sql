@@ -56,4 +56,43 @@ and EducationLevel is not null
 and Occupation is not null
 and HomeOwner is not null
 
-------------------------------------------------------
+------------------------------------------------------inserting data into product table
+insert into [processed_data].[product]
+(
+	ProductKey,	
+	ProductSubcategoryKey,	
+	ProductSKU,
+	ProductName,	
+	ModelName,	
+	ProductDescription,	
+	ProductColor, 	
+	ProductSize,	
+	ProductStyle,	
+	ProductCost,	
+	ProductPrice
+)
+
+select 
+	convert(int,ProductKey) as ProductKey,	
+	convert(int,ProductSubcategoryKey) as ProductSubcategoryKey,	
+	ProductSKU,
+	ProductName,	
+	ModelName,	
+	ProductDescription,	
+	ProductColor, 	
+	ProductSize,	
+	ProductStyle,	
+	convert(decimal,ProductCost) as ProductCost,	
+	convert(decimal,ProductPrice) as ProductPrice
+from [raw_data].[product]
+------------------------------------------------------------------inserting data into product category table
+insert into [processed_data].[product_category]
+(
+	ProductCategoryKey,
+	CategoryName
+)
+
+select 
+	ProductCategoryKey,
+	CategoryName
+from [raw_data].[product_category]
