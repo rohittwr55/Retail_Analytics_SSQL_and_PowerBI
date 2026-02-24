@@ -74,3 +74,13 @@ create table processed_data.subcategory
 	SubcategoryName varchar(50),	
 	ProductCategoryKey int
 );
+----------------------------------------created processed data table for subcategory data
+if OBJECT_ID ('processed_data.teritorry', 'u') is not null
+	drop table processed_data.teritorry
+create table processed_data.teritorry
+(
+	SalesTerritoryKey int,	
+	Region varchar(50),	
+	Country varchar(100),	
+	Continent varchar(100)
+);
