@@ -54,3 +54,14 @@ create table processed_data.product_category
 	ProductCategoryKey int,
 	CategoryName varchar(50)
 );
+
+------------------------------------------created processed data table for retrun data
+if OBJECT_ID ('processed_data.returnitem', 'u') is not null
+	drop table processed_data.returnitem
+create table processed_data.returnitem
+(
+	ReturnDate date,	
+	TerritoryKey int,	
+	ProductKey int,	
+	ReturnQuantity int
+);
