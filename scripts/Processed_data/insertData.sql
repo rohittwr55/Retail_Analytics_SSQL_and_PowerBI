@@ -112,4 +112,16 @@ select
 	ProductKey,	
 	ReturnQuantity
 from [raw_data].[returnitem]
----------------------------------------------------------------------------
+--------------------------------------------------------inserting data into subactegory table-------------------
+insert into [processed_data].[subcategory]
+(
+	ProductSubcategoryKey,	
+	SubcategoryName,	
+	ProductCategoryKey
+)
+
+select 
+	ProductSubcategoryKey,	
+	SubcategoryName,	
+	ProductCategoryKey
+from [raw_data].[subcategory]
