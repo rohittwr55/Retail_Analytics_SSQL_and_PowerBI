@@ -1,5 +1,6 @@
-📊 Retail Analytics – End-to-End Data Analyst Project
-🚀 Project Overview
+📊 **Retail Analytics – End-to-End Data Analyst Project**
+
+🚀 **Project Overview**
 
 This project demonstrates a complete end-to-end data analytics workflow, transforming raw data into actionable business insights using SQL Server and Power BI.
 
